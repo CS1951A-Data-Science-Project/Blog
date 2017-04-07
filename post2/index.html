@@ -15,11 +15,95 @@
 				<div class="page-header">
 					<h1>Blog Post 2<small>&laquo; Midterm Progress &raquo;</small></h1>
 				</div>
+				<h3>Visualization</h3>
+				<br>
 			</div>
 			<div class="col-md-1"></div>
 		</div>
 	</div>
-	<p id="chart"></p>
+	<div style="margin-left: 40px;"><p id="chart"></p></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<br>
+				<p>
+					Above we have included our visualization from the midterm report (with full functionality), which explores the relationship between crime rate and number of immigrants per capita, by year. The circles represent each state and the size of the circles represent the total population of a particular state. It mirrors the Wealth and Health of Nations visualization from the d3 assignment, with some additional features (namely, the informational tooltip on the side). We thought this format would be particularly appropriate given the similar types of immigration data we are working with. Using this model made for a very elegant and readable way to process the 3 relevant datapoints we wanted to present. By animating the change of percent population of immigrants vs crime rate, we demonstrate what happens to a state's crime rate as its percent population of immigrants changes 1990 to 2009. We could see that the percent population of immigrants generally increased and crime rate generally decreased over time, though there are likely external factors that contributed to this trend (better policing, less poverty, etc.). As we progress through this project, we hope to further isolate the causes and effects of these types of developments in immigration policy.
+				</p>
+				<h3>Machine Learning</h3>
+				<p>
+					For the machine learning portion of this project, we have decided to start with looking at sentiment analysis of tweets regarding immigration. We think it is important to discuss the cultural atmosphere surrounding immigration, as it is a major factor in driving policy decisions.  Furthermore, social norms and group preferences inform individual opinions of immigration policy, more so than data, and this perceived understanding of the issue can potentially lead to erroneous assumptions that have no basis in reality.  
+				</p>
+				<p>
+					To do the sentiment analysis of the immigration tweets, we first used the Twitter API to get 400 tweets with the keyword “immigration” sampled at random from the last month. Then, we used similar techniques in the Machine Learning Lab, including the use of the same training dataset, to classify these tweets as positive or negative. Our results using three different machine learning classifiers (Naive Bayes, Logistic Regression, and Support Vector Machine) are below:
+				</p>
+				<div style="font-size: 13px;">
+					<p>
+						<b>Using Naive Bayes</b><br>
+						training mean accuracy: 0.8331125<br>
+						<br>
+						mean and std dev for cross validation scores:<br>
+						Mean: 0.76 Standard Deviation: 0.01<br>
+						<br>
+						most informative features:<br>
+						    -35.9712    3g                     14.6667    vip            
+						    -28.0112    farrah                 12.1154    welcom        
+						    -27.0270    boooo                  12.0000    howdi          
+						    -20.0000    itchi                  12.0000    zac            
+						    -17.9856    booooo                 11.8571    congratul<br>
+						<br>
+						Number of positive tweets: 236<br>
+						Number of negative tweets: 164<br>
+						Percentage of positive tweets: 59.00<br><br>
+					</p>
+					<p>
+						<b>Using Logistic Regression</b><br>
+						training mean accuracy: 0.853225<br>
+						<br>
+						mean and std dev for cross validation scores:<br>
+						Mean: 0.77 Standard Deviation: 0.01<br>
+						<br>
+						most informative features:<br>
+						    -3.0717    sad                    2.0485    proud          
+						    -2.9765    cancel                 2.0413    smile          
+						    -2.5884    lone                   2.0124    welcom        
+						    -2.5622    bummer                 1.8984    yayyi          
+						    -2.4174    depress                1.8309    vision<br>     
+						<br>
+						Number of positive tweets: 327<br>
+						Number of negative tweets: 73<br>
+						Percentage of positive tweets: 81.75<br><br>
+					</p>
+					<p>
+						<b>Using Support Vector Machine</b><br>
+						training mean accuracy: 0.9009875<br>
+						<br>
+						mean and std dev for cross validation scores:<br>
+						Mean: 0.75 Standard Deviation: 0.01<br>
+						<br>
+						most informative features:
+						    -2.1619    sauna                  2.6590    oooofff        
+						    -2.0326    shawneda               2.4141    petunia        
+						    -2.0213    robb                   2.3438    brutu          
+						    -1.9785    aof                    2.3304    neechan        
+						    -1.9653    fiuhh                  2.3103    sleepingi<br>    
+						<br>
+						Number of positive tweets: 267<br>
+						Number of negative tweets: 133<br>
+						Percentage of positive tweets: 66.75<br><br>
+					</p>
+				</div>
+				<p>
+					Overall, our algorithms classified a majority of the tweets as positive. Upon examining the tweets themselves, this result seems to be less that the tweeters in our dataset are in support of immigration, and more that they are in support of President Trump’s actions against immigration (a likely explanation for this is that Trump supporters/immigration hawks are more active on Twitter than their pro-immigration counterparts). This result, while fascinating, illustrates the difficulty of using sentiment analysis to filter a set of tweets into different ideological categories. There are many positive tweets that are anti-immigration, and these tweets are hard to separate from positive tweets that are pro-immigration. Conversely, there also exist negative tweets that express frustration with anti-immigration actions, and tweets that express negative sentiments towards immigration. As such, the sentiment of a tweet can only be so helpful in our analysis.
+				</p>
+				<p>
+					We have generally concluded that machine learning as a tool might not be as useful for the purposes of our project as other data science techniques. Since immigration policy is described by lots of absolute data (e.g. foreign-born percentages, crime rates, etc.) as opposed to uncertain measurements/evaluations, machine learning is less applicable for our topic, since we have a high degree of confidence that our data is accurate. In addition, given our struggles with finding large and detailed datasets, the efficacy of machine learning in our project is complicated by the difficulty to collect and supply sufficiently large training datasets. Overall, machine learning, while an extremely interesting technique and topic to all of us, will likely play a smaller role in our core project than other techniques.
+				</p>
+				<br><br>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	</div>
 	<script type="text/javascript" src="crime.js"></script>
 </body>
 </html>
