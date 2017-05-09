@@ -43,7 +43,7 @@ d3.csv("heatmap/unem/imm_unemp_corr_state.csv", function(data) {
   color_scale.domain([-0.4, 1]);          // modify domain so that difference is clearer 
 
   // Load GeoJSON data 
-  d3.json("us-states.json", function(json) {
+  d3.json("heatmap/unem/us-states.json", function(json) {
 
       // Loop through each state data value in the .csv file
       for (var i = 0; i < data.length; i++) {

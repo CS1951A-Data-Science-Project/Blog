@@ -43,7 +43,7 @@ d3.csv("heatmap/crime/imm_crime_corr_state.csv", function(data) {
   color_scale.domain([-1, 1]); 
 
   // Load GeoJSON data 
-  d3.json("us-states.json", function(json) {
+  d3.json("heatmap/unem/us-states.json", function(json) {
 
       // Loop through each state data value in the .csv file
       for (var i = 0; i < data.length; i++) {
