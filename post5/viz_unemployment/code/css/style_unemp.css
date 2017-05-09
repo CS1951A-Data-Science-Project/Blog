@@ -48,3 +48,7 @@ text {
 polygon {
   pointer-events: all;
 }
+
+.tooltip {
+    opacity: 1 !important;
+}
