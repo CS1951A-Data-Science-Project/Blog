@@ -17,13 +17,13 @@ var color_scale = d3.scale.linear()
     .range(['rgb(206, 192, 197)','rgb(44, 66, 204)']);    
 
 // make svg and append map 
-var svg = d3.select("#heatmap2")
+var svg2 = d3.select("#heatmap2")
       .append("svg")
       .attr("width", width)
       .attr("height", height);
 
 // title 
-svg.append("text")
+svg2.append("text")
   .attr("x", 170)
   .attr("y", offset)
   .attr("font-family", "sans-serif")
@@ -70,7 +70,7 @@ d3.csv("heatmap/unem/imm_unemp_corr_state.csv", function(data) {
       }
 
     // Bind the data to the SVG and create one path per GeoJSON feature
-    svg.selectAll("path")
+    svg2.selectAll("path")
       .data(json.features)
       .enter()
       .append("path")
@@ -112,7 +112,7 @@ var RECT = d3.select("#heatmap2").append("svg")
     .attr("height", 180)
   .attr("class", "legend")
 
-var gradient = svg.append("defs")
+var gradient = svg2.append("defs")
     .append("linearGradient")
     .attr("id", "gradient")
     .attr("x1", "0%")
@@ -139,7 +139,7 @@ RECT.append("rect")
     .style("fill", "url(#gradient)");
 
 var labelScale = d3.scale.linear().domain([-0.4, 1]).range([100, 0]); 
-var labels = d3.svg.axis().scale(labelScale).ticks(5).orient("right");
+var labels = d3.svg2.axis().scale(labelScale).ticks(5).orient("right");
 
 RECT.append("g")
     .attr("class", "y axis")
