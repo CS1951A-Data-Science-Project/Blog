@@ -39,7 +39,7 @@ var div = d3.select("#heatmap1")
         .style("opacity", 0);
 
 // load data 
-d3.csv("imm_crime_corr_state.csv", function(data) {
+d3.csv("heatmap/crime/imm_crime_corr_state.csv", function(data) {
   color_scale.domain([-1, 1]); 
 
   // Load GeoJSON data 

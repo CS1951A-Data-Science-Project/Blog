@@ -131,7 +131,7 @@ tooltip.append("text")
 ///////////////////////////
 
 // Load the data.
-d3.json("../unem_vs_imm.json", function(states) {
+d3.json("viz_unemployment/data/unem_vs_imm.json", function(states) {
 
   /////////////////////////////////////////
   // Functions provided for your utility //
