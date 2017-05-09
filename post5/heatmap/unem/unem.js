@@ -39,7 +39,7 @@ var div = d3.select("#heatmap2")
         .style("opacity", 0);
 
 // load data 
-d3.csv("imm_unemp_corr.csv", function(data) {
+d3.csv("imm_unemp_corr_state.csv", function(data) {
   color_scale.domain([-0.4, 1]);          // modify domain so that difference is clearer 
 
   // Load GeoJSON data 
