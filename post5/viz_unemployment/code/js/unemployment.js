@@ -9,7 +9,6 @@ function x(d) {
 }
 function y(d) {
     // Return unemployment rate
-    console.log(d.unemployment);
     return d.unemployment;
 }
 function radius(d) {
