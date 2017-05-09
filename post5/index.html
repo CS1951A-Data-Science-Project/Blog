@@ -1,0 +1,106 @@
+<html>
+<head>
+	<link rel="stylesheet" href="viz_unemployment/code/css/style_unemp.css">
+	<link rel="stylesheet" href="heatmap/crime/style.css">
+	<link rel="stylesheet" href="heatmap/unem/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charst="utf-8">
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+	<title>Final Blog Post</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<div class="page-header">
+					<h1>Final Blog Post<small> &laquo; Project Summary &raquo;</small></h1>
+				</div>
+				<h3>Overview of Project</h3>
+				<p>
+					Given the current political climate and national debate surrounding immigration policy, our group was compelled to investigate the economic and societal effects of immigration into the United States. We focused on crime rates and unemployment as indicators of political outcomes. We aimed to separate assertions about immigration from data-supported, statistically-significant conclusions.
+				</p>
+				<h3>What We Did</h3>
+				<p>
+					After gathering data on crime rate, unemployment rate, and immigration percentage for each state from 1990 - 2014, we used machine learning, statistical and visualization techniques to analyze our data and draw conclusions. Specifically:
+				</p>
+				<ul>
+					<li>
+						We used ML to perform a sentiment analysis of immigration-related tweets, finding immigration to be a particularly divisive topic.
+					</li>
+					<li>
+						Using statistics, we calculated the correlation value between crime rate (as well as unemployment rate) and immigration population percentage per state.
+					</li>
+					<li>
+						We used the statistical technique of a permutation test to see if the difference between the distributions of H1B visa salaries and the salaries of tech workers in San Francisco is statistically significant. We discovered that it was not different in a statistically significant way.
+					</li>
+					<li>
+						Using d3, we created an interactive bubble graph that visualized immigration population percentage to crime rate by state, and another for unemployment by state.
+					</li>
+					<li>
+						We also made a heatmap of the US using d3, visualizing the correlation between crime rate and increase in immigration for each state. We did the same for correlation between unemployment rate and increase in immigration.
+					</li>
+				</ul>
+
+				<h3>Results and Conclusion</h3>
+				<p>
+					We found a weak correlation between immigration levels and the national unemployment rate, and the national crime rate. On a state-by-state basis, however, the relationship between immigration and crime rates/unemployment varies significantly. We suspect that these differences can be attributed to differences in labor markets, welfare allocations, and other state-specific factors.
+				</p>
+				<p>
+					Ultimately, we consider our project to have made a meaningful contribution towards the study of the U.S. immigration system using a non-partisan lens. Many common assertions about immigration, including the notion that it increases crime rates, were found to be statistically questionable to unlikely, and wherever possible, we used datasets that were less likely to be affected by bias or differences in interpretation (e.g. census data).
+				</p>
+
+				<h3>Addendum: Updates from Blog Post 4</h3>
+				<p>
+					Most of the items above were completed before Blog Post 4, with the exception of the permutation test, a new visualization to display correlation values, and a reapplication of our previous visualization for unemployment rates. We include these items below:
+				</p>
+				<h4>
+					Permutation Test of Salaries for H1B Visa Holders and Non-immigrant San Francisco Tech Workers
+				</h4>
+				<p>
+					We used the permutation test to see whether the distributions between H1B visa salaries and the salaries of tech workers in San Francisco were different in a statistically significant way. We chose San Francisco as it is a popular hub for tech and immigration, and it made performing the statistical analysis more tractable, since we only had to examine a single city. Even so, the data we were looking at was large, which made it difficult to work with (especially for a permutation test, since the number of potential permutations goes up factorially with the number of datapoints, and so more iterations are necessary to get consistent p-value results). As such, we used a modified version of the permutation test to determine significance. Specifically, we sampled 300 random points from each data set - these points would be approximately distributed in the same way that the underlying data is, since there were a large number of points. We then performed the standard permutation test on these 600 points. The permutation test returned that the proportion of permutations with an equal or greater difference between the salary means of each sample was 0.293, indicating that there is no statistical significance in the difference between the two distributions.
+				</p>
+				<p>
+					The specific output from our python script is copied below:
+				</p>
+				<pre style="font-size: 11px;">
+San Francisco Salary Average: 68256.82653333335
+H1B Salary Average: 66612.382
+Difference in Average Salaries: 1644.444533333357
+Proportion of permutations with an equal or greater difference (after 1,000,000 iterations): 0.293318
+</pre>
+			<h4>
+				Visualization of Immigration vs. Unemployment
+			</h4>
+			<p>
+				Using the same d3 code as our previous visualization (immigration vs. crime rates), we used new data to visualize immigration vs. unemployment in a similar fashion. The visualization is shown below:
+			</p>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	</div>
+	<div style="margin-left: 40px;"><p id="chart"></p></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<h4>
+					Heatmap Visualization for Correlation Values by State
+				</h4>
+				<p>
+					For our second visualization, we created a heatmap which visualizes the correlation between crime rate and immigration population percentage for each state, and the correlation for unemployment as well. The visualization demonstrates that there is a particularly high correlation between crime rate and immigration for states such as Montana and North and South Dakota, while the rest of the states have low or negative correlation. For unemployment rate versus immigration, the results are more similar across the US. Comparing the two heatmaps shows that there is no particular pattern to be observed for correlation of unemployment rate and crime rate in each state. In other words, a state's correlation between crime rate and immigration does not suggest anything about its correlation between unemployment rate and immigration. The two heatmap visualizations are shown below:
+				</p>
+			</div>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	<div id="heatmap1">
+	<div id="heatmap2">
+	<script type="text/javascript" src="viz_unemployment/code/js/unemployment.js"></script>
+	<script type="text/javascript" src="heatmap/crime/crime.js"></script>
+	<script type="text/javascript" src="heatmap/unem/unem.js"></script>
+	<!-- <br><br> -->
+</body>
+</html>
