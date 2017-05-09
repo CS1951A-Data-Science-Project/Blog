@@ -219,6 +219,12 @@ d3.json("viz_unemployment/data/unem_vs_imm.json", function(states) {
         .attr("x", 8)
         .attr("y", 110)
         .text("Immigrant population: " + numberWithCommas(d['data'].immigrants));
+
+      tooltip.append("text")
+        .attr("class", "stateinfo")
+        .attr("x", 8)
+        .attr("y", 135)
+        .text("Unemployment rate: " + (Math.round(d['data'].unemployment * 100) * 10) / 10 + "%");
     }
   }
 
