@@ -1,1 +1,6 @@
+Data Science Project on Immigration
 
+Given the current political climate and national debate surrounding immigration policy, our group was compelled to investigate the economic and societal effects of immigration into the United States. We focused on crime rates and unemployment as indicators of political outcomes. Overall, the goal of the project was to separate assertions about immigration from data-supported, statistically-significant conclusions.
+
+Overall, we consider our project to have made meaningful progress towards this founding idea. Many common assertions about immigration, including the notion that it increases crime rates and adversely affects labor markets, were found to be statistically questionable to unlikely, and wherever possible, we used datasets that were less likely to be affected by bias or differences in interpretation (e.g. census data). We also discovered that the effects of immigration varies greatly by state, likely due to differences in labor markets, resource allocations, and other localized factors. Since these differences are so pronounced, we postulate that individual experiences are a significant reason why immigration policy discussions are so polarized.
+# dsforpolitics
